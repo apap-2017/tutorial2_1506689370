@@ -1,2 +1,3 @@
-# tutorial2_1506689370
-Tutorial 2 Kevin Noel Anugrah 
+# Menggunakan​ ​Routing​ ​dan​ ​Controller​ ​dalam​ ​Project​ ​Spring​ ​Boot
+
+Versi​: 2​ ​(​15​ ​September​ ​2017​)

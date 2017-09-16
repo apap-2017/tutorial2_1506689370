@@ -1,0 +1,33 @@
+Tutorial kali ini mempelajari cara menggunakan Spring Boot + Thymeleaf untuk membuat aplikasi sederhana yang dapat mengembalikan static page dari http request, tanpa mengutak-atik konfigurasi default.
+
+### Latihan Project Hello World ###
+Menggunakan anotasi @RequestMapping untuk mengembalikan page yang sesuai dari request.
+Jawaban:
+1.	Tidak terjadi compile error, tetapi tampil error page karena mapping "hello" tidak ada.
+	
+2.	Tidak terjadi compile error, dan page dapat diakses seperti sebelumnya.
+
+3.	-Tidak terjadi compile error, tetapi jika diakses akan mengembalikan TemplateInputException dan menampilkan error page karena template "hello123" tidak ada.
+	-String yang dikembalikan handler methods adalah nama dari template page yang ingin ditampilkan.
+
+
+### Latihan Request Parameter ###
+Menggunakan anotasi @RequestParam untuk menghandle parameter dari request.
+Jawaban:
+1.	Teks "Selamat datang chanek!" ditampilkan karena "hello/greeting" sudah di map ke greeting.html dan parameter dapat dihandle.
+
+2.	-Akses tanpa parameter "name=chanek" mengembalikan MissingServletRequestParameterException sehingga muncul error page.
+	-Element "required=false" menjadikan akses tanpa parameter dapat dilakukan dengan mengosongkan nilainya menjadi null, sehingga teks yang muncul adalah "Selamat datang null!".
+
+3.	Teks "Selamat datang dunia" ditampilkan karena ada element defaultValue yang dipakai jika parameter tidak terisi.
+
+4.	Attribut "th:text" menginstruksikan konten dari tag tersebut direplace dengan teks yang sesuai valuenya.
+
+
+### Latihan Path Variable###
+Menggunakan anotasi @PathVariable untuk dapat menspesifikasikan bagian-bagian dari URL yang dapat diambil sebagai variabel.
+Jawaban:
+1.	(klarifikasi: Mapping latihan sebelumnya dihilangkan karena tidak sesuai tujuan latihan)
+	-Jika diakses akan muncul error page karena tidak ada mapping untuk "/greeting" yang tanpa parameter. Hanya "/greeting/{name}" yang dimap ke greeting.html.
+	-Teks "Selamat datang dengklek!" ditampilkan.
+	-Teks "Selamat datang chanek!" ditampilkan.
